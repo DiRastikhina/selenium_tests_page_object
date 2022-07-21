@@ -21,6 +21,12 @@ class ProductPage(BasePage):
         book_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
         sum_basket = self.browser.find_element(*ProductPageLocators.SUM_BASKET).text
         assert book_price == sum_basket , f"Book price {book_price} doesn't match sum in basket {sum_basket}"
+        
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+        
+    def success_message_should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is present, but should dissapear"
            
     def should_be_success_messages(self):
         self.product_added_message_exists() 
