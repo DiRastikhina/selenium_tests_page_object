@@ -2,10 +2,11 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    #LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini.pull-right.hidden-xs a.btn.btn-default")
 
-class MainPageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+#class MainPageLocators():
+    #LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     #LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
     
 class LoginPageLocators():
@@ -19,3 +20,7 @@ class ProductPageLocators():
     ADDED_MESSAGE = (By.CSS_SELECTOR, ".alert-success:first-child .alertinner strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success:first-child .alertinner")
     SUM_BASKET = (By.CSS_SELECTOR, ".alert-info .alertinner p:first-child strong")
+    
+class BasketPageLocators():
+    MESSAGE_EMPTY = (By.CSS_SELECTOR, "#content_inner p")
+    PRODUCTS_INBASKET = (By.CSS_SELECTOR, ".col-sm-6.h3")
